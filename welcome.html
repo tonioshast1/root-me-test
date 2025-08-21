@@ -7,12 +7,7 @@
   </form>
 
   <script>
-    const checkbox = document.querySelector('input[name="status"]');
-    if (!checkbox.disabled) {
-      checkbox.checked = true;
-    }
-
-    // Soumission immédiate : le navigateur génèrera lui-même les WebKitFormBoundary
+ 
     document.forms[0].submit();
   </script>
 </body>
